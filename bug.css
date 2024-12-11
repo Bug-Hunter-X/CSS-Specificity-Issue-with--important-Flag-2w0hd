@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an issue where the expected behavior does not occur due to the improper use of the `!important` flag:
+
+```css
+.element1 {
+  width: 200px;
+}
+
+.element2 {
+  width: 300px !important;
+}
+
+.element3 {
+  width: 400px;
+}
+
+.element1.element2 {
+  width: 500px;
+}
+```
+
+This is expected to display `.element1.element2` with a width of `500px`. However, due to the `!important` flag in `.element2`, the width will remain `300px`.  The `!important` flag overrides all other style declarations, even more specific selectors.
