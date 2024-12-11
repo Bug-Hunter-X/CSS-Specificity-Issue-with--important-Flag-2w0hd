@@ -1,0 +1,21 @@
+The solution involves removing the `!important` flag from the `.element2` class and relying on CSS specificity to achieve the desired effect.  This improves code maintainability and predictability.  Here's the corrected code:
+
+```css
+.element1 {
+  width: 200px;
+}
+
+.element2 {
+  width: 300px; 
+}
+
+.element3 {
+  width: 400px;
+}
+
+.element1.element2 {
+  width: 500px; 
+}
+```
+
+By removing the `!important` flag, the more specific selector `.element1.element2` will correctly override the styles of `.element1` and `.element2`, resulting in the expected width of `500px`.
